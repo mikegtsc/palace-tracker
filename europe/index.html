@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Palace — EU Tracker</title>
-<meta name="palace-build" content="202611241911">
+<meta name="palace-build" content="202611251119">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
@@ -243,9 +243,10 @@ function renderCity(city){
       data: points,
       borderColor: TOUR_COLORS[tour],
       backgroundColor: TOUR_COLORS[tour],
-      borderWidth: 2.5,
-      pointRadius: isSinglePoint ? 5 : 0,
-      pointHoverRadius: isSinglePoint ? 7 : 3,
+      borderWidth: tour==='2027 Tour' ? 3.5 : 2.5,
+      order: tour==='2027 Tour' ? 0 : 1,
+      pointRadius: tour==='2027 Tour' ? 6 : (isSinglePoint ? 5 : 0),
+      pointHoverRadius: tour==='2027 Tour' ? 8 : (isSinglePoint ? 7 : 3),
       tension: 0.15,
       spanGaps: true,
     });
@@ -310,9 +311,10 @@ function renderTickets(city){
       data: points,
       borderColor: TOUR_COLORS[tour],
       backgroundColor: TOUR_COLORS[tour],
-      borderWidth: 2.5,
-      pointRadius: isSinglePoint ? 5 : 0,
-      pointHoverRadius: isSinglePoint ? 7 : 3,
+      borderWidth: tour==='2027 Tour' ? 3.5 : 2.5,
+      order: tour==='2027 Tour' ? 0 : 1,
+      pointRadius: tour==='2027 Tour' ? 6 : (isSinglePoint ? 5 : 0),
+      pointHoverRadius: tour==='2027 Tour' ? 8 : (isSinglePoint ? 7 : 3),
       tension: 0.15,
       spanGaps: true,
     });
